@@ -8,10 +8,15 @@ body {
 
 a {
   color: #0b0bc4;
+  cursor: pointer;
 }
 
 a:hover {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 * {

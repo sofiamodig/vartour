@@ -72,6 +72,13 @@ export default {
       ],
     },
   ],
+  orderings: [
+    {
+      title: "Year",
+      name: "year",
+      by: [{ field: "slug", direction: "asc" }],
+    },
+  ],
   preview: {
     select: {
       title: "slug.current",
