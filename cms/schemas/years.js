@@ -4,9 +4,9 @@ export default {
   type: "document",
   fields: [
     {
-      name: "name",
+      name: "slug",
       title: "Year",
-      type: "string",
+      type: "slug",
     },
     {
       name: "location",
@@ -31,19 +31,31 @@ export default {
     {
       name: "winners",
       title: "Winners",
-      type: "object",
-      fields: [
+      type: "array",
+      of: [
         {
-          title: "Vår tour",
-          name: "var_tour",
-          type: "reference",
-          to: [{ type: "player" }],
-        },
-        {
-          title: "Nitty Gritty",
-          name: "nitty_gritty",
-          type: "reference",
-          to: [{ type: "player" }],
+          name: "winners",
+          title: "Winners",
+          type: "object",
+          fields: [
+            {
+              title: "Competition",
+              name: "competition",
+              type: "reference",
+              to: [{ type: "competition" }],
+            },
+            {
+              title: "Winner",
+              name: "winner",
+              type: "reference",
+              to: [{ type: "player" }],
+            },
+          ],
+          preview: {
+            select: {
+              title: "competition.name",
+            },
+          },
         },
       ],
     },
@@ -62,7 +74,7 @@ export default {
   ],
   preview: {
     select: {
-      title: "name",
+      title: "slug.current",
     },
   },
 };
