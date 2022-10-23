@@ -1,9 +1,12 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import React from "react";
+import Row from "../components/row";
+import Section from "../components/section";
 import { getAllPlayers } from "../data/players";
 import { getAllYears } from "../data/years";
 import { Player, Winners, Year } from "../types";
+import styles from "./arslista.module.scss";
 
 interface Props {
   years: Year[];
@@ -16,9 +19,8 @@ const Years: NextPage<Props> = ({ years, players }) => {
   const findWinner = (winners: Winners[]) => {
     const winnerRef = winners.find((obj) => obj.competition._ref === varTourRef)
       ?.winner._ref;
-
     const winner = players?.find((player) => player._id === winnerRef);
-    console.log("findWinner", findWinner);
+
     if (winner) {
       return winner.name;
     }
@@ -28,19 +30,28 @@ const Years: NextPage<Props> = ({ years, players }) => {
 
   return (
     <div>
-      {years.map((year) => (
-        <Link
-          key={year.slug.current}
-          href={"/year/" + year.slug.current}
-          shallow
-        >
-          <button style={{ background: "lime", padding: "20px" }}>
-            {year.slug.current}
-            <span>{year.location}</span>
-            <span>Vinnare: {findWinner(year.winners)}</span>
-          </button>
-        </Link>
-      ))}
+      <Row>
+        <h1>Årslista</h1>
+      </Row>
+      <Section>
+        <Row>
+          <div className={styles.row}>
+            {years.map((year) => (
+              <Link
+                key={year.slug.current}
+                href={"/year/" + year.slug.current}
+                shallow
+              >
+                <button className={styles.yearButton}>
+                  {year.slug.current}
+                  <span>{year.location}</span>
+                  <span>Vinnare: {findWinner(year.winners)}</span>
+                </button>
+              </Link>
+            ))}
+          </div>
+        </Row>
+      </Section>
     </div>
   );
 };

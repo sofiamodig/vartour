@@ -9,6 +9,7 @@ import player from "./player";
 import competition from "./competition";
 import years from "./years";
 import gallery from "./gallery";
+import content from "./content";
 import blockContent from "./blockContent";
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -24,6 +25,7 @@ export default createSchema({
     competition,
     years,
     gallery,
+    content,
     blockContent,
   ]),
 });

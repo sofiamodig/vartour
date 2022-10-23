@@ -17,7 +17,6 @@ export default {
       name: "board_member",
       title: "Is a board member",
       type: "boolean",
-      default: false,
     },
     {
       name: "image",
@@ -28,6 +27,9 @@ export default {
       },
     },
   ],
+  initialValue: {
+    board_member: false,
+  },
   preview: {
     select: {
       title: "name",

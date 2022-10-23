@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
-import Link from "next/link";
+import Section from "../components/section";
+import Row from "../components/row";
 
 export const client = createClient({
   projectId: "p2jab1yc",
@@ -21,7 +21,11 @@ export function urlFor(source: any) {
 }
 
 const Home: NextPage = () => {
-  return <div>HEM</div>;
+  return (
+    <Section>
+      <Row>HEM</Row>
+    </Section>
+  );
 };
 
 export default Home;

@@ -10,7 +10,7 @@ export const getAllPlayersPaths = async () => {
 };
 
 export const getAllPlayers = async () => {
-  const players = await client.fetch(`*[_type == "player"]`);
+  const players = await client.fetch(`*[_type == "player"] | order(name desc)`);
   return players;
 };
 

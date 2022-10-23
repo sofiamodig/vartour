@@ -10,7 +10,9 @@ export const getAllYearsPaths = async () => {
 };
 
 export const getAllYears = async () => {
-  const years = await client.fetch(`*[_type == "years"]`);
+  const years = await client.fetch(
+    `*[_type == "years"] | order(slug.current desc)`
+  );
   return years;
 };
 
