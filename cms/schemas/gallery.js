@@ -1,23 +1,23 @@
 export default {
   name: "gallery",
   type: "document",
-  title: "Gallery",
+  title: "Galleri",
   fields: [
     {
       name: "gallery_name",
-      title: "Gallery name",
+      title: "Gallerinamn",
       type: "string",
       readOnly: ({ document }) => document?.gallery_name,
     },
     {
       name: "images",
       type: "array",
-      title: "Images",
+      title: "Bilder",
       of: [
         {
           name: "image",
           type: "image",
-          title: "Image",
+          title: "Bild",
         },
       ],
       options: {

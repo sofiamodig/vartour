@@ -38,6 +38,7 @@ export interface Player extends BaseSchema {
 export interface Competition extends BaseSchema {
   name: string;
   slug: SanitySlug;
+  hero_image: SanityImage;
   image: SanityImage;
   description: any;
 }

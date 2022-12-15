@@ -1,11 +1,11 @@
 export default {
   name: "competition",
-  title: "Competitions",
+  title: "Tävlingar",
   type: "document",
   fields: [
     {
       name: "name",
-      title: "Name",
+      title: "Namn",
       type: "string",
     },
     {
@@ -14,13 +14,18 @@ export default {
       type: "slug",
     },
     {
+      name: "hero_image",
+      title: "Herobild",
+      type: "image",
+    },
+    {
       name: "image",
-      title: "Image",
+      title: "Bild på pokal",
       type: "image",
     },
     {
       name: "description",
-      title: "Description",
+      title: "Beskrivning",
       type: "blockContent",
     },
   ],

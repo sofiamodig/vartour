@@ -5,9 +5,14 @@ import { urlFor } from "..";
 import Row from "../../components/row";
 import Section from "../../components/section";
 import { getAllCompetitions } from "../../data/competitions";
-import { getAllPlayersPaths, getPlayer } from "../../data/players";
+import {
+  getAllPlayersPaths,
+  getPlayer,
+  getPlayerYearlyTexts,
+} from "../../data/players";
 import { getAllYears } from "../../data/years";
 import { Competition, Player, SlugParams, Year } from "../../types";
+import { PortableText } from "@portabletext/react";
 
 type scoreObjType = { [key in string]: number };
 
@@ -15,9 +20,15 @@ interface Props {
   player: Player;
   years: Year[];
   competitions: Competition[];
+  playerYearlyTexts: any;
 }
 
-const Player: NextPage<Props> = ({ player, years, competitions }) => {
+const Player: NextPage<Props> = ({
+  player,
+  years,
+  competitions,
+  playerYearlyTexts,
+}) => {
   const [score, setScore] = useState<scoreObjType>({});
 
   const imgUrl =
@@ -41,6 +52,8 @@ const Player: NextPage<Props> = ({ player, years, competitions }) => {
     setScore(compScoreObj);
   }, [competitions]);
 
+  useEffect(() => {}, [playerYearlyTexts]);
+
   return (
     <article>
       <Section>
@@ -53,6 +66,15 @@ const Player: NextPage<Props> = ({ player, years, competitions }) => {
               <Image src={imgUrl} layout="fill" objectFit="cover" />
             </div>
           )}
+          <div>
+            {playerYearlyTexts.map((obj) => (
+              <div key={obj._id}>
+                <p>{obj.year}</p>
+
+                <PortableText value={obj.text} />
+              </div>
+            ))}
+          </div>
         </Row>
         <Row>
           {Object.keys(score).map((key) => {
@@ -86,12 +108,14 @@ export const getStaticProps = async ({ params }: SlugParams) => {
   const player = await getPlayer(slug);
   const years = await getAllYears();
   const competitions = await getAllCompetitions();
+  const playerYearlyTexts = await getPlayerYearlyTexts(player._id);
 
   return {
     props: {
       player,
       years,
       competitions,
+      playerYearlyTexts,
     },
   };
 };

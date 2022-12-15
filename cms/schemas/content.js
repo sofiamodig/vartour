@@ -1,16 +1,16 @@
 export default {
   name: "content",
-  title: "Content",
+  title: "Innehåll",
   type: "document",
   fields: [
     {
       name: "name",
-      title: "Name",
+      title: "Namn",
       type: "string",
     },
     {
       name: "content",
-      title: "Content",
+      title: "Innehåll",
       type: "blockContent",
     },
   ],

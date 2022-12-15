@@ -1,51 +1,51 @@
 export default {
   name: "years",
-  title: "Years",
+  title: "År",
   type: "document",
   fields: [
     {
       name: "slug",
-      title: "Year",
+      title: "År",
       type: "slug",
     },
     {
       name: "location",
-      title: "Location",
+      title: "Plats",
       type: "string",
     },
     {
       name: "start_date",
-      title: "Start date",
+      title: "Startdatum",
       type: "date",
     },
     {
       name: "end_date",
-      title: "End date",
+      title: "Slutdatum",
       type: "date",
     },
     {
       name: "image_of_winner",
-      title: "Image of the winner",
+      title: "Bild på vinnaren",
       type: "image",
     },
     {
       name: "winners",
-      title: "Winners",
+      title: "Vinnare",
       type: "array",
       of: [
         {
           name: "winners",
-          title: "Winners",
+          title: "Vinnare",
           type: "object",
           fields: [
             {
-              title: "Competition",
+              title: "Tävling",
               name: "competition",
               type: "reference",
               to: [{ type: "competition" }],
             },
             {
-              title: "Winner",
+              title: "Vinnare",
               name: "winner",
               type: "reference",
               to: [{ type: "player" }],
@@ -61,7 +61,7 @@ export default {
     },
     {
       name: "images",
-      title: "Images",
+      title: "Bilder",
       type: "array",
       of: [
         {
@@ -74,7 +74,7 @@ export default {
   ],
   orderings: [
     {
-      title: "Year",
+      title: "År",
       name: "slug",
       by: [{ field: "slug.current", direction: "desc" }],
     },

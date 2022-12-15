@@ -1,0 +1,40 @@
+.wrapper {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url("../../images/39.jpg");
+  background-size: cover;
+  background-position: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  }
+}
+
+.content {
+  color: #fff;
+  z-index: 1;
+
+  h1 {
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 136%;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  p {
+    font-size: 24px;
+    line-height: 150%;
+  }
+}

@@ -3,6 +3,7 @@ import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import Section from "../components/section";
 import Row from "../components/row";
+import { StartPageHero } from "../components/heros/startPageHero";
 
 export const client = createClient({
   projectId: "p2jab1yc",
@@ -22,9 +23,12 @@ export function urlFor(source: any) {
 
 const Home: NextPage = () => {
   return (
-    <Section>
-      <Row>HEM</Row>
-    </Section>
+    <>
+      <StartPageHero />
+      <Section>
+        <Row>HEM</Row>
+      </Section>
+    </>
   );
 };
 

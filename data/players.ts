@@ -20,3 +20,9 @@ export const getPlayer = async (slug: string) => {
   const player = await client.fetch(query, { slug });
   return player;
 };
+export const getPlayerYearlyTexts = async (player: string) => {
+  const query = groq`*[_type == "playerYearlyText" && player._ref == $player]`;
+
+  const texts = await client.fetch(query, { player });
+  return texts;
+};

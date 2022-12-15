@@ -17,13 +17,7 @@ const Layout: FunctionComponent<Props> = ({ children }) => {
       </Head>
       <Header />
 
-      <main>
-        <br />
-        <br />
-        {children}
-        <br />
-        <br />
-      </main>
+      <main>{children}</main>
 
       <footer>Footer</footer>
     </div>

@@ -1,11 +1,11 @@
 export default {
   name: "player",
-  title: "Players",
+  title: "Spelare",
   type: "document",
   fields: [
     {
       name: "name",
-      title: "Name",
+      title: "Namn",
       type: "string",
     },
     {
@@ -15,12 +15,12 @@ export default {
     },
     {
       name: "board_member",
-      title: "Is a board member",
+      title: "Är med i styrelsen",
       type: "boolean",
     },
     {
       name: "image",
-      title: "Image",
+      title: "Bild",
       type: "image",
       options: {
         hotspot: true,

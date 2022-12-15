@@ -1,11 +1,13 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import React from "react";
+import { PageHero } from "../components/heros/pageHero";
 import Row from "../components/row";
 import Section from "../components/section";
 import { getAllPlayers } from "../data/players";
 import { getAllYears } from "../data/years";
 import { Player, Winners, Year } from "../types";
+import img from "../images/45.jpg";
 import styles from "./arslista.module.scss";
 
 interface Props {
@@ -30,9 +32,11 @@ const Years: NextPage<Props> = ({ years, players }) => {
 
   return (
     <div>
-      <Row>
-        <h1>Årslista</h1>
-      </Row>
+      <PageHero
+        title="Årslista"
+        subTitle="Lista på alla år sedan 1994"
+        image={img.src}
+      />
       <Section>
         <Row>
           <div className={styles.row}>

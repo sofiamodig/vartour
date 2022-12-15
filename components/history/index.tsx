@@ -5,7 +5,7 @@ const HistorySection = () => {
   return (
     <Row>
       <div>
-        <h1>History</h1>
+        <h1>Historia</h1>
         <p>
           Som jag minns det var det hösten 1991. Jag hade fått i
           födelsedagspresent att ta grönt kort, så hette det på den tiden.

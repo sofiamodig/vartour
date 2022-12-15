@@ -10,33 +10,44 @@ import {
 import { getAllPlayersPaths, getPlayer } from "../../data/players";
 import { Competition, Player, SlugParams } from "../../types";
 import { PortableText } from "@portabletext/react";
+import { PageHero } from "../../components/heros/pageHero";
 
 interface Props {
   competition: Competition;
 }
 
 const Competition: NextPage<Props> = ({ competition }) => {
-  console.log("competition", competition);
   const imgUrl =
     competition && competition.image
       ? urlFor(competition.image).width(200).url()
       : null;
 
+  const heroImageUrl =
+    competition && competition.image
+      ? urlFor(competition.hero_image).width(2000).url()
+      : null;
+
+  if (!heroImageUrl || !imgUrl) {
+    return null;
+  }
+
   return (
     <article>
+      <PageHero
+        title={competition.name}
+        subTitle="Deltävling"
+        image={heroImageUrl}
+      />
       <Section>
-        <Row>
-          <h1>{competition?.name}</h1>
-          {imgUrl && (
-            <div
-              style={{ position: "relative", width: "200px", height: "300px" }}
-            >
-              <Image src={imgUrl} layout="fill" objectFit="contain" />
-            </div>
-          )}
-        </Row>
-        <Row>
-          <PortableText value={competition.description} />
+        <Row maxWidth="800px">
+          <div>
+            {imgUrl && <Image src={imgUrl} layout="fill" objectFit="contain" />}
+          </div>
+          <div>
+            <p>DELTÄVLING</p>
+            <h2>{competition.name.toUpperCase()}</h2>
+            <PortableText value={competition.description} />
+          </div>
         </Row>
       </Section>
     </article>

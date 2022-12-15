@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { getAllCompetitions } from "../../data/competitions";
 import { Competition } from "../../types";
+import styles from "./header.module.scss";
 
 const Header: FunctionComponent = () => {
   const [showCompetitions, setShowCompetitions] = useState(false);
@@ -18,7 +19,7 @@ const Header: FunctionComponent = () => {
   }, []);
 
   return (
-    <header>
+    <header className={styles.navbar}>
       <Link href="/aktuellt">
         <a>Aktuellt</a>
       </Link>
