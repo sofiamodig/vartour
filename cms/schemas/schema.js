@@ -9,7 +9,7 @@ import player from "./player";
 import competition from "./competition";
 import years from "./years";
 import gallery from "./gallery";
-import content from "./content";
+import ongoing from "./ongoing";
 import playerYearlyText from "./playerYearlyText";
 import blockContent from "./blockContent";
 
@@ -26,7 +26,7 @@ export default createSchema({
     competition,
     years,
     gallery,
-    content,
+    ongoing,
     playerYearlyText,
     blockContent,
   ]),

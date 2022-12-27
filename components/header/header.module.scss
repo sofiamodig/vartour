@@ -1,5 +1,56 @@
-.navbar {
+.wrapper {
   position: fixed;
-  width: 100%;
   z-index: 99;
+  width: 100%;
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.innerWrapper {
+  display: flex;
+  max-width: 1440px;
+  width: calc(100% - 64px);
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
+  height: 84px;
+  justify-content: center;
+}
+
+.logo {
+  margin-right: 24px;
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+.nav {
+  display: flex;
+  margin-left: 8vw;
+
+  a, button {
+    all: unset;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 16px;
+    color: #fff;
+    padding: 4px;
+    margin: 0 2.4vw;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    margin-top: -3px;
+  }
+
+  .subNavWrapper {
+
+  }
+
+  .subNav {
+    position: absolute;
+  }
+    
 }
