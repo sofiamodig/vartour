@@ -11,6 +11,7 @@ import { getAllPlayersPaths, getPlayer } from "../../data/players";
 import { Competition, Player, SlugParams } from "../../types";
 import { PortableText } from "@portabletext/react";
 import { PageHero } from "../../components/heros/pageHero";
+import styles from "./deltavling.module.scss";
 
 interface Props {
   competition: Competition;
@@ -40,13 +41,22 @@ const Competition: NextPage<Props> = ({ competition }) => {
       />
       <Section>
         <Row maxWidth="800px">
-          <div>
-            {imgUrl && <Image src={imgUrl} layout="fill" objectFit="contain" />}
-          </div>
-          <div>
-            <p>DELTÄVLING</p>
-            <h2>{competition.name.toUpperCase()}</h2>
-            <PortableText value={competition.description} />
+          <div className={styles.rowWrapper}>
+            <div className={styles.imageWrapper}>
+              {imgUrl && (
+                <Image
+                  src={imgUrl}
+                  layout="fill"
+                  objectFit="contain"
+                  objectPosition="0 0"
+                />
+              )}
+            </div>
+            <div className={styles.text}>
+              <label className="above-title">Deltävling</label>
+              <h2>{competition.name.toUpperCase()}</h2>
+              <PortableText value={competition.description} />
+            </div>
           </div>
         </Row>
       </Section>

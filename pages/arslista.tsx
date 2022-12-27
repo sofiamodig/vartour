@@ -38,6 +38,10 @@ const Years: NextPage<Props> = ({ years, players }) => {
       />
       <Section>
         <Row>
+          <div>
+            <label className="above-title">Lista på alla år sedan 1994</label>
+            <h2>Årslista</h2>
+          </div>
           <div className={styles.row}>
             {years.map((year) => (
               <Link
@@ -46,9 +50,9 @@ const Years: NextPage<Props> = ({ years, players }) => {
                 shallow
               >
                 <button className={styles.yearButton}>
-                  {year.slug.current}
+                  <strong>{year.slug.current}</strong>
                   <span>{year.location}</span>
-                  <span>Vinnare: {findWinner(year.winners)}</span>
+                  <p>Vinnare: {findWinner(year.winners)}</p>
                 </button>
               </Link>
             ))}

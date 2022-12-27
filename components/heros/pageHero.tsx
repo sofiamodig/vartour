@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { FunctionComponent } from "react";
-import styles from "./hero.module.scss";
+import styles from "./pageHero.module.scss";
 
 interface Props {
   title: string;

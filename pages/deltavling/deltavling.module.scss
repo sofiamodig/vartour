@@ -1,0 +1,17 @@
+.rowWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imageWrapper {
+  position: relative;
+  height: 424px;
+  width: 198px;
+  display: block;
+}
+
+.text {
+  flex: 1;
+  max-width: 530px;
+  margin-left: 72px;
+}
