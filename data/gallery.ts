@@ -19,3 +19,10 @@ export const getLargeGallery = async () => {
   );
   return gallery;
 };
+
+export const getStartPageGallery = async () => {
+  const gallery = await client.fetch(
+    `*[_type == "gallery" && _id == "654147e8-5c43-4673-9814-0e08f3800b1b"][0]`
+  );
+  return gallery;
+};

@@ -1,9 +1,51 @@
+@font-face {
+  font-family: "Quattrocento";
+  src: local("Quattrocento"),
+  url("/fonts/Quattrocento-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Quattrocento";
+  src: local("Quattrocento"),
+  url("/fonts/Quattrocento-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("/fonts/Montserrat-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("/fonts/Montserrat-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("/fonts/Montserrat-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
 * {
   box-sizing: border-box;
+  font-family: "Quattrocento";
+  font-weight: 400
 }
 body {
   --text-color: #000;
   --text-secondary: #858585;
+  background: #F9F5EE;
 }
 
 html,
@@ -15,9 +57,16 @@ body {
   color: var(--text-color);
   }
 
+.center-text {
+  text-align: center;
+}
+
 p {
   margin-top: 0;
   margin-bottom: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
 }
 
 p:last-child {
@@ -51,4 +100,26 @@ blockquote {
 
 blockquote:before, blockquote:after {
   content: "\201D";
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 160%;
+}
+
+.above-title {
+  text-transform: uppercase;
+  color: #6C6C6C;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Montserrat';
 }

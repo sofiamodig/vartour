@@ -29,8 +29,6 @@ export default GalleryPage;
 export async function getStaticProps() {
   const gallery = await getLargeGallery();
 
-  console.log("gallery", gallery);
-
   return {
     props: {
       gallery,

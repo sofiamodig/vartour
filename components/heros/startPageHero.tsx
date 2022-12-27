@@ -1,10 +1,15 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import Image from "next/image";
 import logo from "../../images/logo.svg";
 import styles from "./startPageHero.module.scss";
 import { Button } from "../button";
 
-export const StartPageHero = () => {
+interface Props {
+  year: string;
+  winner: string;
+}
+
+export const StartPageHero: FunctionComponent<Props> = ({ year, winner }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -13,7 +18,7 @@ export const StartPageHero = () => {
         </div>
         <h1>VÅR TOUR</h1>
         <p>Sedan 1994</p>
-        <Button label="Vinnare 2022 - Vinnarnamn" />
+        {year && <Button label={`Vinnare ${year} - ${winner}`} />}
       </div>
     </div>
   );

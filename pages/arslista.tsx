@@ -9,6 +9,7 @@ import { getAllYears } from "../data/years";
 import { Player, Winners, Year } from "../types";
 import img from "../images/45.jpg";
 import styles from "./arslista.module.scss";
+import { varTourRef } from "./_app";
 
 interface Props {
   years: Year[];
@@ -16,8 +17,6 @@ interface Props {
 }
 
 const Years: NextPage<Props> = ({ years, players }) => {
-  const varTourRef = "e955edeb-eefc-4be9-8116-2e99680840f2";
-
   const findWinner = (winners: Winners[]) => {
     const winnerRef = winners.find((obj) => obj.competition._ref === varTourRef)
       ?.winner._ref;

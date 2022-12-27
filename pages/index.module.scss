@@ -1,0 +1,26 @@
+
+.aboutTourRow {
+  display: flex;
+  align-items: center;
+}
+
+.aboutTourText {
+  flex: 1;
+  max-width: 446px;
+  margin-left: auto;
+
+  h2 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 160%;
+  }
+}
+
+.historyText {
+  display: flex;
+  justify-content: space-between;
+
+  & > div {
+    width: calc(50% - 16px)
+  }
+}

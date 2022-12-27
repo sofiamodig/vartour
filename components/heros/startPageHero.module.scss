@@ -9,6 +9,10 @@
   background-size: cover;
   background-position: center;
 
+  & + div {
+    padding-top: 120px;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -23,6 +27,9 @@
 .content {
   color: #fff;
   z-index: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 
   h1 {
     font-weight: 700;

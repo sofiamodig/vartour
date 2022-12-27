@@ -5,18 +5,19 @@ import Row from "../row";
 
 interface Props {
   images: string[];
+  columns?: 3 | 4;
 }
 
-const Gallery: FunctionComponent<Props> = ({ images }) => {
+const Gallery: FunctionComponent<Props> = ({ images, columns = 4 }) => {
   const [selected, setSelected] = useState<number>();
 
   return (
-    <Row>
+    <div>
       <div className={styles.wrapper}>
         {images.map((image, i) => (
           <div
             key={image}
-            className={styles.imageWrapper}
+            className={styles.imageWrapper + " " + styles["column-" + columns]}
             onClick={() => setSelected(i)}
           >
             <Image src={image} layout="fill" objectFit="cover" priority />
@@ -54,7 +55,7 @@ const Gallery: FunctionComponent<Props> = ({ images }) => {
           />
         </div>
       )}
-    </Row>
+    </div>
   );
 };
 
