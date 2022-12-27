@@ -8,13 +8,13 @@ interface Props {
 
 export const Button: FunctionComponent<Props> = ({ label }) => {
   return (
-    <div className={styles.button}>
+    <button className={styles.button}>
       <div className={styles.buttonInner}>
         <span>{label}</span>
         <span className={styles.arrow}>
           <ArrowIcon />
         </span>
       </div>
-    </div>
+    </button>
   );
 };

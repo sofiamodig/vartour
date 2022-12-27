@@ -1,7 +1,12 @@
 import React from "react";
+import { Button } from "../components/button";
 
 const Statistik = () => {
-  return <div>Statistik</div>;
+  return (
+    <div>
+      <Button label="hej" />
+    </div>
+  );
 };
 
 export default Statistik;

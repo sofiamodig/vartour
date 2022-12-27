@@ -72,8 +72,10 @@ const Home: NextPage<Props> = ({ latestYear, winner, gallery }) => {
                 segrare från deltävlingarna (+ en inlottad spelare) gör sedan
                 upp i en shootout. Vinnaren av shootouten tar hem Vår Tour.
               </p>
-              <Link href="">
-                <Button label="Läs mer" />
+              <Link href="/">
+                <div>
+                  <Button label="Läs mer" />
+                </div>
               </Link>
             </div>
           </div>
@@ -108,8 +110,10 @@ const Home: NextPage<Props> = ({ latestYear, winner, gallery }) => {
           <div className="center-text">
             <label className="above-title">Aktuellt</label>
             <h2>Var lirar vi nästa år?</h2>
-            <Link href="">
-              <Button label="Läs mer" />
+            <Link href="/">
+              <div>
+                <Button label="Läs mer" />
+              </div>
             </Link>
           </div>
         </Row>
@@ -250,7 +254,9 @@ const Home: NextPage<Props> = ({ latestYear, winner, gallery }) => {
             <label className="above-title">Kontakt</label>
             <h2>Har du frågor eller funderingar?</h2>
             <Link href="">
-              <Button label="Kontakta oss" />
+              <div>
+                <Button label="Kontakta oss" />
+              </div>
             </Link>
           </div>
         </Row>

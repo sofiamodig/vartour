@@ -10,6 +10,8 @@
   position: relative;
   margin: 8px;
   cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
 
   &.column-3 {
     width: calc(33.33% - 16px);
