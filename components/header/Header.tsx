@@ -7,7 +7,7 @@ import logo from "../../images/logo.svg";
 import styles from "./Header.module.scss";
 import { ArrowDown } from "../../images/icons/arrow_down";
 
-const Header: FunctionComponent = () => {
+export const Header: FunctionComponent = () => {
   const [showCompetitions, setShowCompetitions] = useState(false);
 
   const [competitions, setCompetitions] =
@@ -68,5 +68,3 @@ const Header: FunctionComponent = () => {
     </header>
   );
 };
-
-export default Header;

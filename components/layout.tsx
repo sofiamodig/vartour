@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { FunctionComponent, ReactNode } from "react";
-import Header from "./header/Header";
+import { Header } from "./header/Header";
 
 interface Props {
   children: ReactNode;
