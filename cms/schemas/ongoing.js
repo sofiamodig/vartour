@@ -21,6 +21,31 @@ export default {
       title: "Innehåll",
       type: "blockContent",
     },
+    {
+      name: "location",
+      title: "Plats",
+      type: "blockContent",
+    },
+    {
+      name: "dates",
+      title: "När",
+      type: "blockContent",
+    },
+    {
+      name: "startTimes",
+      title: "Starttider",
+      type: "blockContent",
+    },
+    {
+      name: "price",
+      title: "Pris",
+      type: "blockContent",
+    },
+    {
+      name: "more",
+      title: "Övrigt",
+      type: "blockContent",
+    },
   ],
   preview: {
     select: {
