@@ -8,6 +8,8 @@ import Section from "../components/section";
 import { getAllPlayers } from "../data/players";
 import { Player } from "../types";
 import styles from "./deltagare.module.scss";
+import { PageHero } from "../components/heros/pageHero";
+import heroImage from "../images/34.jpg";
 
 interface Props {
   players: Player[];
@@ -20,11 +22,14 @@ const Players: NextPage<Props> = ({ players }) => {
 
   return (
     <>
-      <Row>
-        <h1>Deltagare</h1>
-      </Row>
+      <PageHero
+        image={heroImage.src}
+        title="Deltagare"
+        subTitle="Alla som deltagit i Vår tour"
+      />
       <Section>
         <Row>
+          <label className="above-title">Titel?</label>
           <h2>Styrelsen</h2>
           <div className={styles.players}>
             {boardMembers.map((player) => {
@@ -45,10 +50,9 @@ const Players: NextPage<Props> = ({ players }) => {
             })}
           </div>
         </Row>
-      </Section>
-      <Section>
         <Row>
-          <h2>Spelare</h2>
+          <label className="above-title">Titel?</label>
+          <h2>Deltagare</h2>
           <div className={styles.players}>
             {players.map((player) => {
               const imageUrl = urlFor(player.image).url();

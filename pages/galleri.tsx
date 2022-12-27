@@ -2,8 +2,12 @@ import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import { urlFor } from ".";
 import Gallery from "../components/gallery";
+import { PageHero } from "../components/heros/pageHero";
+import Row from "../components/row";
+import Section from "../components/section";
 import { getLargeGallery } from "../data/gallery";
 import { GalleryType } from "../types";
+import heroImage from "../images/32.jpg";
 
 interface Props {
   gallery: GalleryType;
@@ -18,9 +22,18 @@ const GalleryPage: NextPage<Props> = ({ gallery }) => {
   }, [gallery]);
 
   return (
-    <div>
-      <Gallery images={images} />
-    </div>
+    <>
+      <PageHero
+        image={heroImage.src}
+        title="Galleri"
+        subTitle="Bilder genom åren"
+      />
+      <Section>
+        <Row>
+          <Gallery images={images} />
+        </Row>
+      </Section>
+    </>
   );
 };
 

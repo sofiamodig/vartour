@@ -3,16 +3,21 @@ import React from "react";
 import Section from "../components/section";
 import trophy from "../images/var_tour.png";
 import groupPhoto from "../images/group.png";
-import HistorySection from "../components/history";
 import Row from "../components/row";
+import { PageHero } from "../components/heros/pageHero";
 
 const OmTouren = () => {
   return (
     <div>
+      <PageHero
+        image={groupPhoto.src}
+        title="Om touren"
+        subTitle="Någon text?"
+      />
       <Section>
-        <Row>
-          <h1>Om touren</h1>
-          <Image src={trophy} />
+        <Row maxWidth="800px">
+          <label className="above-title">Text</label>
+          <h2>Någon titel här</h2>
           <p>
             Huvud tävlingen som spelas över tre dagar där de tre bästa spelarna
             efter 3 rundor och alla segrare i de separata tävlingarna samt en
@@ -23,6 +28,9 @@ const OmTouren = () => {
             resultat är den med lägst HCP före i resultatlistan. Varje dag
             spelas också som en separat tävling med egna priser.
           </p>
+          <Image src={trophy} width={150} height={460} />
+        </Row>
+        <Row maxWidth="800px">
           <h3>Shootout.</h3>
           <p>
             Spelas direkt efter avslutad prisutdelning för del-tävlingen dag 3
@@ -33,15 +41,13 @@ const OmTouren = () => {
             spelar de vidare till en står som segrare.
           </p>
           <h3>Ranking inför Shootout</h3>
-          <ol>
-            <li>Sammalagt 1:a efter 3 dagar</li>
-            <li>Sammalagt 2:a efter 3 dagar</li>
-            <li>Sammalagt 3:a efter 3 dagar</li>
-            <li>Sammalagt bäste del-segrare efter 3 dagar</li>
-            <li>Sammalagt näst bäste del-segrare efter 3 dagar</li>
-            <li>Sammalagt tredje bäste del-segrare efter 3 dagar</li>
-            <li>Inlottad</li>
-          </ol>
+          <p>1. Sammalagt 1:a efter 3 dagar</p>
+          <p>2. Sammalagt 2:a efter 3 dagar</p>
+          <p>3. Sammalagt 3:a efter 3 dagar</p>
+          <p>4. Sammalagt bäste del-segrare efter 3 dagar</p>
+          <p>5. Sammalagt näst bäste del-segrare efter 3 dagar</p>
+          <p>6. Sammalagt tredje bäste del-segrare efter 3 dagar</p>
+          <p>7. Inlottad</p>
           <h3>Hål 1.</h3>
           <p>
             Man utgår ifrån den med lägst HCP övriga får mellanskillnaden av
@@ -69,13 +75,10 @@ const OmTouren = () => {
           </p>
         </Row>
       </Section>
-      <Section>
+      <Section padding="none">
         <Row>
           <Image src={groupPhoto} />
         </Row>
-      </Section>
-      <Section>
-        <HistorySection />
       </Section>
     </div>
   );
