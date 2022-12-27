@@ -67,7 +67,7 @@ const Player: NextPage<Props> = ({
             </div>
           )}
           <div>
-            {playerYearlyTexts.map((obj) => (
+            {playerYearlyTexts.map((obj: any) => (
               <div key={obj._id}>
                 <p>{obj.year}</p>
 
