@@ -36,11 +36,11 @@ const Player: NextPage<Props> = ({
 
   useEffect(() => {
     const compScoreObj: scoreObjType = {};
-    competitions.map((comp) => {
+    competitions?.map((comp) => {
       compScoreObj[comp._id] = 0;
     });
 
-    years.map((year) => {
+    years?.map((year) => {
       year.winners.map((obj) => {
         if (obj.winner._ref === player._id) {
           compScoreObj[obj.competition._ref] =
@@ -53,6 +53,10 @@ const Player: NextPage<Props> = ({
   }, [competitions]);
 
   useEffect(() => {}, [playerYearlyTexts]);
+
+  if (!player || !years) {
+    return null;
+  }
 
   return (
     <article>

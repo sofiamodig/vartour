@@ -11,6 +11,10 @@ interface Props {
 const Year: NextPage<Props> = ({ year }) => {
   console.log("year", year);
 
+  if (!year) {
+    return null;
+  }
+
   return (
     <article>
       <h1>{year.slug.current}</h1>
