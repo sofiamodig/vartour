@@ -31,7 +31,11 @@ const Players: NextPage<Props> = ({ players }) => {
               const imageUrl = urlFor(player.image).url();
 
               return (
-                <Link href={"/deltagare/" + player.slug.current} shallow>
+                <Link
+                  key={player._id}
+                  href={"/deltagare/" + player.slug.current}
+                  shallow
+                >
                   <div key={player.slug.current} className={styles.playerCard}>
                     <Image src={imageUrl} layout="fill" objectFit="cover" />
                     <span>{player.name}</span>
@@ -50,7 +54,11 @@ const Players: NextPage<Props> = ({ players }) => {
               const imageUrl = urlFor(player.image).url();
 
               return (
-                <Link href={"/deltagare/" + player.slug.current} shallow>
+                <Link
+                  key={player._id}
+                  href={"/deltagare/" + player.slug.current}
+                  shallow
+                >
                   <div key={player.slug.current} className={styles.playerCard}>
                     <Image src={imageUrl} layout="fill" objectFit="cover" />
                     <span>{player.name}</span>

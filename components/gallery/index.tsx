@@ -14,7 +14,11 @@ const Gallery: FunctionComponent<Props> = ({ images }) => {
     <Row>
       <div className={styles.wrapper}>
         {images.map((image, i) => (
-          <div className={styles.imageWrapper} onClick={() => setSelected(i)}>
+          <div
+            key={image}
+            className={styles.imageWrapper}
+            onClick={() => setSelected(i)}
+          >
             <Image src={image} layout="fill" objectFit="cover" priority />
           </div>
         ))}
